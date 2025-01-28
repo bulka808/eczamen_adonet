@@ -5,8 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:eczamen_adonet"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Книжный магазин" Height="500" Width="800">
     <Grid>
-        <TextBlock Name="txt1" Text=""/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4">
+            <TextBlock Text="название" Margin="5,0,5,1"/>
+            <TextBox Name="TitleTextBox"  Margin="5,0,5,1"/>
+            <TextBlock Text="автор" Margin="5,0,5,1"/>
+            <TextBox Name="AuthorTextBox" Margin="5,0,5,1" />
+            <TextBlock Text="издательство" Margin="5,0,5,1"/>
+            <TextBox Name="PublisherTextBox"  Margin="5,0,5,1" />
+            <TextBlock Text="кол-во страниц" Margin="5,0,5,1"/>
+            <TextBox Name="PagesTextBox"  Margin="5,0,5,1" />
+            <TextBlock Text="жанр" Margin="5,0,5,1"/>
+            <TextBox Name="GenreTextBox"  Margin="5,0,5,1" />
+            <TextBlock Text="год выхода" Margin="5,0,5,1"/>
+            <TextBox Name="YearTextBox"  Margin="5,0,5,1" />
+            <TextBlock Text="себестоимость" Margin="5,0,5,1"/>
+            <TextBox Name="costTextBox"  Margin="5,0,5,1" />
+            <TextBlock Text="цена для продажи" Margin="5,0,5,1"/>
+            <TextBox Name="SalePriceTextBox"  Margin="5,0,5,1" />
+            <TextBlock Text="является ли продолжением" Margin="5,0,5,1"/>
+            <CheckBox Name="SequelCheckBox" />
+            <TextBlock Text="продолжение чего" Margin="5,0,5,1"/>
+            <TextBox Name="SequelOfTextBox"  Margin="5,0,5,1" />
+            <TextBlock Text="id книги"  Margin="5,0,5,1" />
+            <TextBox Name="idTextBox"  Margin="5,0,5,1" />
+            <Button Content="Добавить книгу"  Margin="5,0,5,1" Click="AddBookButton_Click"/>
+            <Button Content="изменить книгу"  Margin="5,0,5,1" Click="UpdateBookButton_Click"/>
+            <Button Content="Поиск"  Margin="5,0,5,1" Click="SearchButton_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="3" Orientation="Horizontal">
+            <StackPanel>
+                <TextBlock Text="логин" Margin="10,10,10,5"/>
+                <TextBlock Text="пароль" Margin="10,10,10,5"/>
+                <Button Name="SignInButton" Content="войти"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBox Name="LoginTextBox" Width="300" Margin="10,10,10,5" />
+                <TextBox Name="PasswordTextBox" Width="300" Margin="10,10,10,5" />
+            </StackPanel>
+        </StackPanel>
+
+
+
+        <ListBox Name="BooksListBox"  Margin="10,10,10,10" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
     </Grid>
 </Window>
